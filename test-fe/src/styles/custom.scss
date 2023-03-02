@@ -1,0 +1,427 @@
+// Then add additional custom code here
+
+html {
+  font-size: 85%;
+  @media screen and (max-width: 500px) {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+input:focus,
+select:focus,
+.btn:focus,
+textarea:focus {
+  box-shadow: unset !important;
+  outline: 0 !important;
+  border-color: #ced4da !important;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.top-20 {
+  top: 20px;
+}
+
+small,
+.small {
+  font-size: 0.8em;
+}
+
+a {
+  text-decoration: none;
+  color: #2b2d30;
+  font-size: 17px;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.nav-link {
+  color: #2b2d30;
+  font-weight: 500;
+  font-size: 14px;
+  &.active,
+  &:hover {
+    color: $primary;
+  }
+}
+
+// button
+
+button {
+  &:active {
+    transform: scale(1.03);
+  }
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  color: #fff !important;
+  background-color: #ff6700;
+  border-color: #ff6700;
+}
+
+.search-hero .btn:disabled {
+  opacity: 100 !important;
+}
+
+.btn:focus {
+  box-shadow: unset;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  color: $white;
+}
+
+.btn-primary:hover {
+  background-color: #f26200;
+}
+
+.btn-outline-primary {
+  color: $dark;
+  border-color: $dark;
+
+  &:active,
+  &:hover {
+    color: $white !important;
+  }
+
+  &:focus {
+    color: $primary;
+    border-color: $primary;
+  }
+}
+
+.btn-primary-1 {
+  color: $body-color;
+  background-color: $white;
+  border: 1px solid $white;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 8px;
+
+  &:focus,
+  &.active,
+  &:hover {
+    color: $white;
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// radius
+
+.rounded-lg {
+  border-radius: 0.6rem !important;
+}
+
+.rounded-lg-start {
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.rounded-lg-end {
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+
+.rounded-lg-top {
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+.rounded-xl {
+  border-radius: 1.5rem !important;
+}
+
+.rounded-right-full {
+  border-radius: 50% 0 0 50%;
+}
+
+.br {
+  border-radius: 12px;
+}
+
+.shadow-primary {
+  box-shadow: 0 0 0 2px #e5e2e0;
+}
+
+.shadow-1 {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.img-wrap {
+  position: relative;
+}
+.img-wrap .close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 100;
+}
+
+.opacity-onhover {
+}
+
+.opacity-onhover:hover {
+  opacity: 0.3;
+}
+
+.logo {
+  width: 200px;
+  height: 50px;
+  @media screen and (max-width: 368px) {
+    width: 150px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 120px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+  }
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.h-100-all * {
+  height: 100%;
+}
+
+.filter-invert {
+  filter: invert(1);
+}
+
+.btn-icon {
+  &-1 {
+    height: 3.125rem;
+    width: 3.125rem;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+
+    i {
+      font-size: 2.125rem;
+    }
+  }
+}
+
+.pos-p {
+  position: absolute;
+  @media screen and (max-width: 991.9px) {
+    position: unset;
+  }
+  .pos-p-end {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+  }
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table-border {
+  border-color: #43464b33 !important;
+}
+
+.hover-scale-small {
+  transform: scale(1);
+  transition: all 0.3s ease;
+
+  &:focus,
+  &:active,
+  &:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.02);
+  }
+}
+
+// input
+
+input:focus,
+textarea:focus {
+  outline: 0;
+  box-shadow: unset !important;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  content: '\F159';
+  -webkit-appearance: none;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50px;
+  background: url(../assets/delete-icn.png) no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type='search']:focus::-webkit-search-cancel-button {
+  opacity: 1;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.upload-image {
+  input[type='file'] {
+    display: none;
+  }
+}
+
+// input Number
+
+input[type='number'] {
+  /*for absolutely positioning spinners*/
+  position: relative;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 0.5;
+  border-left: 10px solid;
+  cursor: pointer;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: inner-spin-button !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+// Checks
+
+.radio-check {
+  .form-check-input[type='radio'] {
+    border-radius: 3px;
+    margin-top: 0;
+    background-size: 70%;
+  }
+  .form-check-input:checked[type='radio'] {
+    background-image: url('../assets/check.svg');
+  }
+}
+
+// images size
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.height-size {
+  height: 200px;
+  @media screen and (max-width: 500px) {
+    height: 170px;
+  }
+
+  &-small {
+    height: 120px;
+    @media screen and (max-width: 768px) {
+      height: 90px;
+    }
+
+    @media screen and (max-width: 500px) {
+      height: 60px;
+    }
+  }
+
+  &-1 {
+    height: 400px;
+
+    @media screen and (max-width: 1000px) {
+      height: 380px;
+    }
+    @media screen and (max-width: 780px) {
+      height: 350px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 250px;
+    }
+  }
+
+  &-2 {
+    height: 300px;
+    @media screen and (max-width: 500px) {
+      height: 170px;
+    }
+  }
+  &-3 {
+    height: 150px;
+  }
+}
+
+.image-size {
+  &-very-small {
+    width: 100px;
+    height: 80px;
+  }
+
+  &-small {
+    width: 120px;
+    height: 100px;
+  }
+  &-1 {
+    width: 60%;
+    height: 145px;
+  }
+}
+
+// cards..
+
+.card-container {
+  overflow: hidden auto;
+  height: 800px;
+  @media screen and (max-width: 992px) {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+// gird
+
+.w-gird-2 {
+  width: 48%;
+  @media screen and (max-width: 992px) {
+    width: 600px;
+    min-width: 600px;
+  }
+}
+
+// ===
+
+.dropdown-remove-arrow {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
