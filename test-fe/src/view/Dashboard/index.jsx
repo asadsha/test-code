@@ -143,6 +143,7 @@ const Dashboard = () => {
                 categories={categories}
                 setList={setList}
                 list={list}
+                selectedCategory={selectedCategory}
               />
             }
           </Modal.Body>

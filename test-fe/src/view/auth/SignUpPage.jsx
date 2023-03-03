@@ -99,11 +99,7 @@ const SignUpPage = () => {
                   /> */}
                 </div>
                 <div className='mb-4'>
-                  <button
-                    className='btn btn-primary br  w-100'
-                    type='submit'
-                    disabled={password !== password2}
-                  >
+                  <button className='btn btn-primary br  w-100' type='submit'>
                     Sign Up
                   </button>
                 </div>

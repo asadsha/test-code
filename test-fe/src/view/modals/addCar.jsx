@@ -5,7 +5,7 @@ import Select from 'react-select';
 import { SelectStyle } from '../../styles/react-select/SelectStyle';
 import { NotificationManager } from 'react-notifications';
 
-const AddNewCar = ({ close, categories, setList, list }) => {
+const AddNewCar = ({ close, categories, setList, list, selectedCategory }) => {
   const [categoryId, setCategoryId] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -22,7 +22,9 @@ const AddNewCar = ({ close, categories, setList, list }) => {
       .post('/cars', obj)
       .then((res) => {
         NotificationManager.success('Successfully Added', 'Success');
-        setList([...list, obj]);
+        if (selectedCategory === categoryId) {
+          setList([...list, obj]);
+        }
         close();
         setLoading(false);
       })
@@ -86,7 +88,9 @@ const AddNewCar = ({ close, categories, setList, list }) => {
                     options={categories}
                     placeholder='Select Category'
                     styles={SelectStyle}
-                    onChange={(e) => setCategoryId(e.value)}
+                    onChange={(e) => {
+                      setCategoryId(e.value);
+                    }}
                   />
                 </div>
                 <div className='mb-4'>

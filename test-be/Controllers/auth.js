@@ -1,6 +1,7 @@
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import Model from '../Models/Model';
+import emailHandler from '../utils/email';
 
 const createToken = (user, res, next) => {
 	const { _id, email, username, address } = user;
@@ -62,12 +63,12 @@ const userSignIn = (req, res, next) => {
 
 const registerUser = (req, res, next) => {
 	const { username, address, email } = req.body;
+
 	// randomly generated password
-	let password = Math.random()
+	const password = Math.random()
 		.toString(36)
 		.slice(2, 10);
-	//password hash
-	console.log(password);
+	// password hash
 	bcryptjs
 		.hash(password, 12)
 		.then(hashedPassword => {
@@ -79,10 +80,17 @@ const registerUser = (req, res, next) => {
 			});
 			user
 				.save()
-				.then(savedSpace => {
+				.then(savedUser => {
+					// sending email
+					emailHandler.emailToExec(
+						res,
+						next,
+						password,
+						'Contact From Test Service',
+						email,
+					);
 					res.status(200).send({
 						message: 'User Created Successfully',
-						savedSpace,
 					});
 				})
 				.catch(err => {
